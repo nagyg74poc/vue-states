@@ -1,11 +1,8 @@
 import Vue from 'vue';
-import {VueApp} from '../app';
 import {Component} from 'vue-property-decorator';
 import {LoginValues} from "../@types/loginValues";
 import {createNamespacedHelpers} from 'vuex';
 import {LOGIN} from '../store/action-types';
-import {user} from '../store/modules/user';
-import {store} from "../store";
 
 const {
     mapActions: mapUserActions,

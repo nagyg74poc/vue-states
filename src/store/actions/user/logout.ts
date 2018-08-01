@@ -1,5 +1,5 @@
 import {GET_USER_ERROR, UNAUTHENTICATED} from "../../mutation-types";
-import {axiosInstance} from "../../../axiosInstance";
+import {http, httpService} from '../../../services/httpService'
 import * as Cookies from 'js-cookie';
 
 export async function logoutAction({commit, state, dispatch}: any, payload: any): Promise<void> {
@@ -7,14 +7,8 @@ export async function logoutAction({commit, state, dispatch}: any, payload: any)
 
         const url = `/logout`;
         const method = 'GET';
-        const withCredentials = true;
-console.log(axiosInstance.defaults.headers.common);
-        // const headers = {
-        //     'X-Auth-Token':                 Cookies.get('XSRF-TOKEN'),
-        //     // 'content-type': 'application/json',
-        //     // 'Access-Control-Request-Headers': 'access-control-allow-origin, content-type',
-        // };
-        await axiosInstance({url, withCredentials, method})
+
+        await httpService.instance({url, method})
             .then((response) => {
                 // axios.defaults.headers.common['X-Auth-Token'] = null;
                 Cookies.remove('JWT');

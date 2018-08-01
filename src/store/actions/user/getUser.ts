@@ -1,5 +1,5 @@
 import {GET_USER_ERROR, SET_USER} from "../../mutation-types";
-import {axiosInstance} from "../../../axiosInstance";
+import {httpService} from '../../../services/httpService'
 
 export async function getUserAction({commit, state}: any, payload: any): Promise<void> {
     try {
@@ -7,7 +7,7 @@ export async function getUserAction({commit, state}: any, payload: any): Promise
         const url = `/customer/${payload.UID}`;
         const method = 'GET';
 
-        await axiosInstance({url, method})
+        await httpService.instance({url, method})
             .then((response) => {
                 const user = {
                     username: response.data.username,

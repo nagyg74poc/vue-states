@@ -1,6 +1,6 @@
 import {AUTHENTICATED, UNAUTHENTICATED} from "../../mutation-types";
 import {GET_USER} from "../../action-types";
-import {axiosInstance} from "../../../axiosInstance";
+import {httpService} from '../../../services/httpService'
 import * as Cookies from 'js-cookie';
 
 export const loginAction =  async ({commit, state, dispatch}: any, payload: any): Promise<void> => {
@@ -15,7 +15,7 @@ export const loginAction =  async ({commit, state, dispatch}: any, payload: any)
         const url = `/login`;
         const method = 'POST';
 
-        await axiosInstance({url, data, method})
+        await httpService.instance({url, data, method})
             .then((response) => {
                 Cookies.set('JWT', response.data.dataLayer.tokens.JWT, {
                     domain: response.data.dataLayer.domain

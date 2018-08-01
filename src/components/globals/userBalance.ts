@@ -4,11 +4,12 @@ import {Balance} from '../../@types/Balance';
 
 @Component({
     name: 'userBalance',
+    delimiters: ['[[', ']]'],
     template: `<div class="vue-balance">
-        <div class="vue-balance__withdrawable">withdrawable: {{balance.withdrawable}}</div>
-        <div class="vue-balance__locked">locked: {{balance.locked}}</div>
-        <div class="vue-balance__bonus">bonus: {{balance.bonus}}</div>
-        <div class="vue-balance__total">total: {{total}}</div>
+        <div class="vue-balance__withdrawable">withdrawable: [[balance.withdrawable]]</div>
+        <div class="vue-balance__locked">locked: [[balance.locked]]</div>
+        <div class="vue-balance__bonus">bonus: [[balance.bonus]]</div>
+        <div class="vue-balance__total">total: [[total]]</div>
         </div>`
 })
 export class userBalance extends Vue {

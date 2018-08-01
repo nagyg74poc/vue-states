@@ -1,5 +1,6 @@
 import {AUTHENTICATED, GET_USER_ERROR, SET_USER} from "../../mutation-types";
-import {axiosInstance} from "../../../axiosInstance";
+import {http, httpService} from '../../../services/httpService'
+import {AxiosInstance} from "axios";
 
 export async function getCurrentUser ({commit, dispatch}: any) :Promise<void> {
     try {
@@ -8,8 +9,7 @@ export async function getCurrentUser ({commit, dispatch}: any) :Promise<void> {
         const method = 'GET';
         // const withCredentials = true;
 
-        console.log(axiosInstance.defaults.headers.common);
-        await axiosInstance({url, method})
+        await httpService.instance({url, method})
             .then((response) => {
                 if (response.status === 200){
                     commit(AUTHENTICATED);

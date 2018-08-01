@@ -1,10 +1,18 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>{{title}}</title>
-    <link rel='stylesheet' href='/css/style.css' />
-  </head>
-  <body>
-    {{{body}}}
-  </body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue Title</title>
+</head>
+<body>
+{{{body}}}
+<script src="/bundle.js"></script>
+<script>
+    MyVue.bootstrap({
+        {{#each context}}
+            {{@key}}: '{{this}}',
+        {{/each}}
+    });
+</script>
+</body>
 </html>

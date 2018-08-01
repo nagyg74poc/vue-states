@@ -1,10 +1,11 @@
 module.exports = {
     mode: "development",
     devtool: "inline-source-map",
-    entry: "./src/entries.ts",
+    entry: "./src/app.ts",
     output: {
         path: __dirname + "/dist",
-        filename: "bundle.js"
+        filename: "bundle.js",
+        library: 'MyVue'
     },
     resolve: {
         alias: {
