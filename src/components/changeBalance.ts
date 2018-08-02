@@ -44,7 +44,7 @@ export class changeBalance extends Vue {
         this.$store.dispatch('user/' + CHANGE_BALANCE, payload);
     }
 
-};
+}
 
 Vue.component('changeBalance', changeBalance);
 

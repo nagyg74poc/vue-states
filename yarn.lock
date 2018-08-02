@@ -2914,6 +2914,10 @@ vue-property-decorator@^7.0.0:
   dependencies:
     vue-class-component "^6.2.0"
 
+vue-typed@^2.1.4:
+  version "2.1.4"
+  resolved "https://registry.yarnpkg.com/vue-typed/-/vue-typed-2.1.4.tgz#f4151482242e4c7de401e6fad5ee70e092e9c9e7"
+
 vue@^2.5.16:
   version "2.5.16"
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.5.16.tgz#07edb75e8412aaeed871ebafa99f4672584a0085"

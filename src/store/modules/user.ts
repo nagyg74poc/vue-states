@@ -1,5 +1,4 @@
 import {User} from '../../@types/User';
-import Vue from 'vue';
 import {loginAction, logoutAction, getUserAction, getCurrentUser, changeBalance} from '../actions/user';
 import {AUTHENTICATED, UNAUTHENTICATED, SET_USER, SET_BALANCE, GET_USER_ERROR} from '../mutation-types';
 
@@ -54,5 +53,5 @@ export const user = {
     namespaced: true,
     actions,
     mutations,
-    state
+    state,
 };
