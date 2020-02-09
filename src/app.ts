@@ -36,7 +36,8 @@ Vue.mixin({
 
 export function bootstrap(options: any) {
 
-    configService.apiBaseUrl = options.apiBaseUrl;
+    // optional API Base URL override
+    // configService.apiBaseUrl = options.apiBaseUrl;
 
     const $appConfig:IAppConfigData = configService.config;
 
